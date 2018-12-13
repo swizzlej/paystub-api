@@ -58,17 +58,17 @@ class KeyDate {
         return $stmt;
     }
 
-    //Get one
-    public function get_one(){
-        $query = "SELECT * FROM $this->table_name WHERE id=?";
+    //Get one user date
+    public function get_user_date(){
+        $query = "SELECT * FROM $this->table_name WHERE PersonID=?";
 
         // sanitize
-        $this->id = htmlspecialchars(strip_tags($this->id));
+        $this->PersonID = htmlspecialchars(strip_tags($this->PersonID));
 
         $stmt = $this->connection->prepare($query);
 
         // bind values
-        $stmt->bindParam(1, $this->id);
+        $stmt->bindParam(1, $this->PersonID);
 
         $stmt->execute();
 
@@ -76,10 +76,10 @@ class KeyDate {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
         // set values to object properties
-        $this->username = $row['username'];
-        $this->email = $row['email'];
-        $this->pword = $row['pword'];
-        $this->active = $row['active'];
+        $this->id = $row['id'];
+        $this->keydates = $row['keydates'];
+        $this->doubled = $row['doubled'];
+        $this->PersonID = $row['PersonID'];
 
         return $stmt;
     }
