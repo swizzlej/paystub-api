@@ -79,8 +79,7 @@ class KeyDate {
         $this->id = $row['id'];
         $this->keydates = $row['keydates'];
         $this->doubled = $row['doubled'];
-        $this->PersonID = $row['PersonID'];
-
+        
         return $stmt;
     }
 
