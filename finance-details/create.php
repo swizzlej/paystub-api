@@ -26,7 +26,7 @@ if(
     $finDet->firstPayDay = $data->firstPayDay;
     $finDet->PersonID = $data->PersonID;
 
-    if($finDet->create()){ // User created successfully
+    if($finDet->create()){ // Financial data created successfully
         // set response code - 201 created
         http_response_code(201);
  
